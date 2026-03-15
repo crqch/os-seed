@@ -1,0 +1,38 @@
+[system]
+core = [
+    "grub", "xf86-video-amdgpu", "fprintd", "libxcrypt-compat", 
+    "man-pages", "yay-bin"
+]
+utils = [
+    "btop", "fastfetch", "fd", "file-roller", "zoxide", 
+    "inotify-tools", "github-cli"
+]
+
+[hyprland]
+packages = [
+    "hyprland", "hyprpaper", "hyprlock", "hyprpicker", "hyprshot", 
+    "hypridle", "hyprcursor", "hyprmon-bin", "waybar", "xwaylandvideobridge"
+]
+
+[dev]
+editors = ["neovim", "helix", "zed", "vscodium-bin", "opencode-bin", "obsidian-bin"]
+languages = ["elixir-ls", "erlang", "hex", "opam", "python2-bin", "typst", "typst-live-git"]
+devops = ["ansible-core", "dnslookup-bin", "dufs-bin", "ethtool", "fping", "iw", "nmap", "tcpdump"]
+docker = ["dive", "docker", "docker-compose"]
+android = ["android-sdk-build-tools", "android-sdk-platform-tools", "android-studio"]
+
+[hardware]
+printing = ["ch34x-dkms-git", "octoprint", "orca-slicer-bin", "hplip", "system-config-printer"]
+tablets = ["opentabletdriver"]
+virt = ["virt-manager"]
+
+[apps]
+browsers = ["librewolf-bin", "waterfox-bin", "helium-browser-bin", "plasma-browser-integration"]
+social = ["signal-desktop", "vesktop-bin", "equibop-bin", "ente-auth-bin"]
+media = ["celluloid", "easyeffects", "loupe", "obs-studio", "pinta", "rnote", "upscayl-bin", "spotify"]
+networking = ["impala", "networkmanager-pptp", "proton-vpn-gtk-app", "tailscale", "termius", "r-quick-share-bin"]
+tools = ["postman-bin", "otter-launcher", "hashcat", "handy-bin", "impala"]
+
+[terminal]
+shell = ["kitty", "fisher", "tmux-plugin-manager", "tmux-plugin-panel-bin", "zoxide"]
+fonts = ["ttf-google-sans-code-nf"]

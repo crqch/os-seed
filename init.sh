@@ -1,19 +1,28 @@
 #!/bin/bash
 
-RED='\e[31m'
-BLU='\e[34m'
-GRN='\e[32m'
-DEF='\e[0m'
+BLUE='\e[34m'
+GREEN='\e[32m'
+RESET='\e[0m'
 
-hypr_packages=("hyprland" "hyprpaper" "hyprlock" "hyprpicker" "hyprshot" "hypridle" "hyprcursor")
+TOML_FILE="packages.toml"
 
-echo -e "${BLU} [+] Installing" "${hypr_packages[@]}" "${DEF}"
+if ! command -v yq &> /dev/null; then
+    echo "yq is required. Install it with: sudo pacman -S yq"
+    exit 1
+fi
 
-yay -Sya -q --noconfirm "${hypr_packages[@]}" >>/dev/null
+echo -e "${BLUE}--- Starting System Sync ---${RESET}"
 
-echo -e "${GRN} Installed. Copying configs..."
+sections=$(yq eval '.. | select(tag == "!!seq") | path | join(".")' "$TOML_FILE")
 
-mkdir ~/.config/hypr
-cp -rf ./dots/hypr ~/.config/hypr
+for section in $sections; do
+    mapfile -t pkgs < <(yq eval ".${section}[]" "$TOML_FILE")
 
-packages=("neovim" "librewolf-bin" "")
+    if [ ${#pkgs[@]} -gt 0 ]; then
+        echo -e "${BLUE}[+] Processing section: ${GREEN}$section${RESET}"
+        
+        yay -S --needed --noconfirm "${pkgs[@]}"
+    fi
+done
+
+echo -e "${GREEN}--- All packages processed! ---${RESET}"
