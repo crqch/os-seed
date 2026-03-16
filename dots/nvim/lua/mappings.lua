@@ -31,3 +31,9 @@ map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up" })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+local paraglide = require "utils.paraglide"
+
+map("v", "<leader>px", paraglide.extract, { desc = "Extract text to Paraglide i18n JSON" })
+map("n", "<leader>pl", paraglide.set_locale, { desc = "Set Paraglide Locale" })
+map("n", "<leader>pn", paraglide.toggle_newline_replacement, { desc = "Toggle Newlines to Spaces for Paraglide" })
