@@ -1,57 +1,64 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 24, 
-    "spacing": 8,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "pulseaudio#microphone", "battery", "tray"],
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "spacing": 8,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "idle_inhibitor", "pulseaudio", "pulseaudio#microphone", "battery", "tray"],
 
-    "hyprland/workspaces": {
-        "format": "[{name}]",
-        "disable-scroll": true,
-        "all-outputs": true
+  "hyprland/workspaces": {
+    "format": "[{name}]",
+    "disable-scroll": true,
+    "all-outputs": true,
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "[AWAKE]",
+      "deactivated": "[SLEEP]",
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "[AWAKE]",
-            "deactivated": "[SLEEP]"
-        }
+  },
+  "tray": {
+    "spacing": 8,
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
+    "tooltip": false,
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
     },
-    "tray": {
-        "spacing": 8
-    },
-    "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
-        "tooltip": false
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "[BAT {capacity}%]",
-        "format-charging": "[CHG {capacity}%]",
-        "format-plugged": "[PLG {capacity}%]",
-        "format-alt": "[{time}]"
-    },
-    "pulseaudio": {
-        "format": "[VOL {volume}%]",
-        "format-muted": "[VOL MUTED]",
-        "format-bluetooth": "[BT {volume}%]",
-        "scroll-step": 5.0,
-        "smooth-scrolling-threshold": 1.0,
-        "on-click": "pavucontrol-qt",
-        "tooltip": false
-    },
-    "pulseaudio#microphone": {
-        "format": "[MIC {format_source}]",
-        "format-source": "{volume}%",
-        "format-source-muted": "MUTED",
-        "on-click": "pavucontrol -t 4",
-        "scroll-step": 1.0,
-        "smooth-scrolling-threshold": 1.0,
-        "tooltip": false
-    }
+    "format": "[BAT {capacity}%]",
+    "format-charging": "[CHG {capacity}%]",
+    "format-plugged": "[PLG {capacity}%]",
+    "format-alt": "[{time}]",
+  },
+  "network": {
+    "format": "[{ifname}]",
+    "format-wifi": "[{essid} <span color='#efce79'>{ipaddr}</span>]",
+    "format-ethernet": "[{ifname} <span color='#efce79'>{ipaddr}</span>]",
+    "format-disconnected": "[DISCONNECTED]",
+    "tooltip": false,
+  },
+  "pulseaudio": {
+    "format": "[VOL {volume}%]",
+    "format-muted": "[VOL MUTED]",
+    "format-bluetooth": "[BT {volume}%]",
+    "scroll-step": 5.0,
+    "smooth-scrolling-threshold": 1.0,
+    "on-click": "pavucontrol-qt",
+    "tooltip": false,
+  },
+  "pulseaudio#microphone": {
+    "format": "[MIC {format_source}]",
+    "format-source": "{volume}%",
+    "format-source-muted": "MUTED",
+    "on-click": "pavucontrol -t 4",
+    "scroll-step": 1.0,
+    "smooth-scrolling-threshold": 1.0,
+    "tooltip": false,
+  },
 }

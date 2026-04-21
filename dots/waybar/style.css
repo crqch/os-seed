@@ -1,15 +1,9 @@
-/* --- Ferra Theme Palette --- */
-@define-color night #2b292d;
-@define-color ash   #383539;
-@define-color bark  #6f5d63;
-@define-color mist  #d1d1e0;
-@define-color sage  #b1b695;
-@define-color coral #ffa07a;
-@define-color honey #f5d76e;
-@define-color ember #e06b75;
+/* @import url("./ferra.css"); */
+@import url("./yue_newmoon.css");
 
 * {
-  font-family: "CommitMono8", "Fira Code", monospace;
+  /* font-family: "CommitMonoNerdFont-Regular", "Fira Code", monospace; */
+  font-family: "BigBlueTerm437 Nerd Font", "Fira Code", monospace;
   font-size: 13px;
   border: none;
   border-radius: 0;

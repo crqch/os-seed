@@ -1,0 +1,10 @@
+/* --- Yue Newmoon (Zed) Theme Palette --- */
+@define-color night #0D090D; /* Main editor background */
+@define-color ash   #1A1218; /* Panel/Surface background */
+@define-color bark  #7A5674; /* Comment / Line number color */
+@define-color mist  #F0D8EB; /* Primary foreground text */
+@define-color sage  #D4FFB3; /* Functions / Success green */
+@define-color coral #F9A2EC; /* Keywords / Title pink-purple */
+@define-color honey #F9A2EC; /* Strings / Warning yellow */
+@define-color ember #FF91A6; /* Error / Deleted / ANSI red */
+@define-color sun   #F5C94E; /* IP address / Warning yellow */
