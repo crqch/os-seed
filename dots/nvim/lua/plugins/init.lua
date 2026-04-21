@@ -12,8 +12,28 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "williamboman/mason.nvim",
+    },
     config = function()
-      require "configs.lspconfig"
+      local lspconfig = require "lspconfig"
+      local nvlsp = require "nvchad.configs.lspconfig"
+
+      -- Load NvChad defaults (mappings, etc.)
+      nvlsp.defaults()
+
+      require("mason-lspconfig").setup {
+        handlers = {
+          function(server_name)
+            lspconfig[server_name].setup {
+              on_attach = nvlsp.on_attach,
+              on_init = nvlsp.on_init,
+              capabilities = nvlsp.capabilities,
+            }
+          end,
+        },
+      }
     end,
   },
   {
@@ -103,6 +123,7 @@ return {
         "html",
         "css",
       },
+      auto_install = true,
     },
   },
 }
