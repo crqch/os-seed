@@ -1,0 +1,69 @@
+[global]
+    ### Display ###
+    monitor = 0
+    mouse_left_click = do_action, close_current
+
+    # Middle click: Just close the notification
+    mouse_middle_click = close_current
+
+    # Right click: (Optional) Open context menu if there are multiple actions
+    mouse_right_click = context
+    follow = mouse
+    
+    # Blocky TUI geometry
+    width = 350
+    height = 200
+    origin = top-right
+    offset = 20x20
+    scale = 0
+    notification_limit = 5
+    
+    ### Style ###
+    # Zero radius for the blocky look
+    corner_radius = 0
+    frame_width = 2
+    
+    # Progress bar (for your volume script)
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    # Colors from Yue Newmoon
+    # Background: #0D090D | Foreground: #F0D8EB | Frame: #F9A2EC
+    background = "#0D090D"
+    foreground = "#F0D8EB"
+    frame_color = "#F9A2EC"
+    separator_color = "#F9A2EC"
+
+    ### Text ###
+    font = BigBlueTerm437 Nerd Font 11
+    
+    # TUI style formatting (adds a little bracket/prefix)
+    format = "<b>[%s]</b>\n%b"
+    
+    alignment = left
+    vertical_alignment = center
+    show_indicators = yes
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 0
+
+[urgency_low]
+    background = "#0D090D"
+    foreground = "#7A5674"
+    frame_color = "#1A1218"
+    timeout = 4
+
+[urgency_normal]
+    background = "#0D090D"
+    foreground = "#F0D8EB"
+    frame_color = "#F9A2EC"
+    timeout = 10
+
+[urgency_critical]
+    background = "#0D090D"
+    foreground = "#FF91A6"
+    frame_color = "#FF91A6"
+    timeout = 0
